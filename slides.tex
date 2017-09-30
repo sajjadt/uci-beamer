@@ -1,0 +1,171 @@
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice.
+
+\documentclass{beamer}
+\usepackage{verbatim}
+\usepackage{ulem}
+\usepackage{textpos}
+\usepackage{lmodern}
+
+
+% This theme is based on Berkeley beamer theme
+% Hide the left bar
+\usetheme[width=0in]{Berkeley}
+\makeatletter
+\beamer@headheight=1.5\baselineskip
+\makeatother
+
+\definecolor{myblue}{rgb}{0.16,0.23,0.75}
+\setbeamercolor{linecolor}{fg=white,bg=myblue}
+
+% Set the page footline
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{\fontsize{9}{9}\selectfont%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{linecolor}
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{linecolor}\usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,right]{linecolor}
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{1em}% original: 2ex
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}% original: 2ex
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+% Get rid of the bottom navigation
+\beamertemplatenavigationsymbolsempty
+
+% Set the colors
+% Title Frame
+\setbeamercolor{title}{fg=blue,bg=yellow!50}
+% Blocks
+%\setbeamercolor{block title example}{fg=black,bg=yellow!50}
+\setbeamercolor{frametitle}{fg=blue,bg=yellow!50}
+
+\title[UCI Beamer]{A Beamer Template for anteaters!}
+\author[Peter]{Peter the Anteater}
+\institute[UCI]{Department of Computer Science, UC Irvine}
+
+% A subtitle is optional and this may be deleted
+\subtitle{Zot Zot!}
+
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{October 2017}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Computer Science}
+% This is only inserted into the PDF information catalog. Can be left
+% out.
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+
+\begin{document}
+
+{
+% Remoe the headline on the title page
+\setbeamertemplate{headline}{}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+
+
+% Put UCI logo on top of pages
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(.92\textwidth,-0.8cm)
+\includegraphics[height=0.6cm,width=1.2cm]{uci.png}
+\end{textblock*}}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Section 1}
+
+
+\begin{frame} {Frame 1}
+\begin{itemize}
+\item item 1
+\item item 2
+\end{itemize}
+\begin{block}{A block}
+This is a normal block.
+\end{block}
+\begin{example}
+This is how example blocks look.
+\end{example}
+\end{frame}
+
+
+
+% All of the following is optional and typically not needed.
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+
+  \begin{thebibliography}{10}
+
+  \beamertemplatebookbibitems
+  % Start with overview books.
+
+  \bibitem{Author1990}
+    A.~Author.
+    \newblock {\em Handbook of Everything}.
+    \newblock Some Press, 1990.
+
+
+  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short.
+
+  \bibitem{Someone2000}
+    S.~Someone.
+    \newblock On this and that.
+    \newblock {\em Journal of This and That}, 2(1):50--100,
+    2000.
+  \end{thebibliography}
+\end{frame}
+
+\end{document}
